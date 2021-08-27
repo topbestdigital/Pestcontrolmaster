@@ -1,0 +1,20 @@
+.subscribe-form {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__title {
+    margin-bottom: 20px;
+
+    @media (min-width: $breakpoint-medium) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__inline {
+    margin-bottom: 20px;
+
+    @media (min-width: $breakpoint-small) {
+      margin-bottom: 0;
+    }
+  }
+}

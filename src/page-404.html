@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Error 404. Page not found | Pest Control of Ukraine</title>
+  @@include('_include/page_head.html')
+</head>
+
+<body>
+  <noscript>У вас отключен JavaScript. Приносим наши извинения, но это делает затруднительным использование данного сайта.</noscript>
+
+  <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar" role="navigation">
+
+      <button class="uk-offcanvas-close uk-close-large" type="button" data-uk-close aria-label="Закрыть меню"></button>
+
+      <ul class="uk-nav-primary uk-nav-parent-icon uk-margin-xlarge-top" data-uk-nav>
+        <li class="uk-active"><a href="#">Головна</a></li>
+        <li class="uk-parent">
+          <a href="#">Про спілку</a>
+          <ul class="uk-nav-sub">
+            <li><a href="#">Устав</a></li>
+            <li><a href="#">Звіт по роках</a></li>
+            <li><a href="#">Членство</a></li>
+          </ul>
+        </li>
+        <li class="uk-parent">
+          <a href="#">Члени ГС</a>
+          <ul class="uk-nav-sub">
+            <li><a href="#">Sub item</a></li>
+            <li><a href="#">Sub item</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Новини</a></li>
+        <li><a href="#">Події</a></li>
+        <li><a href="#">Документи</a></li>
+        <li><a href="#">Вакансії</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+
+      <div class="uk-hidden@s uk-margin-medium-top uk-margin-bottom">
+        <form class="uk-search uk-search-default uk-width-expand">
+          <a href="#" class="uk-search-icon-flip" data-uk-search-icon></a>
+          <input class="uk-search-input" type="search" placeholder="Пошук...">
+        </form>
+      </div>
+
+      <div class="uk-hidden@s">
+        <button class="uk-button uk-button-default uk-width-expand" type="button">Мова</button>
+        <div class="uk-background-secondary uk-position-relative" data-uk-drop="mode: click; offset: 10">
+          <ul class="uk-nav uk-margin-small-top uk-margin-small-bottom">
+            <li class="uk-active">
+              <a class="uk-text-primary" href="#" title="Русский язык" style="display:block; padding: 10px 20px;">Рус</a>
+            </li>
+            <li>
+              <a href="#" title="Еще язык" style="display:block; padding: 10px 20px;">Анг</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="page__inner">
+
+    <div class="page__content uk-background-primary" id="target-top">
+
+      <div class="page__noindex">
+
+        @@include('blocks/page-header/page-header.html')
+
+      </div>
+
+      <main class="main-page main-page--short" role="main">
+
+        <div class="uk-container">
+
+          <div class="uk-light" data-uk-grid data-uk-height-match="target: > div > div">
+
+            <div class="uk-width-1-1 uk-width-1-5@s uk-width-1-4@m uk-width-1-3@l">
+              <div class="uk-visible@m uk-flex uk-flex-column uk-flex-center">
+                <img src="img/honeycombs-bg.svg" alt="decor">
+              </div>
+            </div>
+
+            <div class="uk-width-1-1 uk-width-3-5@s uk-width-1-2@m uk-width-1-3@l">
+              <div class="uk-text-center uk-flex uk-flex-column uk-flex-center">
+                <img class="uk-display-block" src="img/error-404.svg" alt="Error 404. Страница не найдена">
+                <h1 class="uk-margin-large-bottom">Сторінку не знайдено або не існує :(</h1>
+                <p>
+                  <a href="index.html" class="uk-button uk-button-default uk-width-expand">На головну</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="uk-width-1-1 uk-width-1-5@s uk-width-1-4@m uk-width-1-3@l">
+              <div class="uk-visible@m uk-flex uk-flex-column uk-flex-center" style="transform: scale(-1, 1);">
+                <img src="img/honeycombs-bg.svg" alt="decor">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <div class="page__footer-wrapper" id="target-bottom">
+    @@include('blocks/subscribe-form/subscribe-form.html')
+    @@include('blocks/page-footer/page-footer.html')
+  </div>
+
+  <div id="modal-search" class="uk-modal-full uk-modal" data-uk-modal>
+    <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" data-uk-height-viewport>
+      <button class="uk-modal-close-full uk-close-large" type="button" data-uk-close aria-label="Закрыть окно поиска"></button>
+      <form class="uk-search uk-search-large" action="/" method="post">
+        <input class="uk-search-input uk-text-center" type="search" placeholder="Поиск..." autofocus>
+      </form>
+    </div>
+  </div>
+
+  @@include('_include/page_bottom.html')
+
+</body>
+</html>

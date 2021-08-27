@@ -1,0 +1,131 @@
+@mixin text-hide {
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+@mixin list-decorated {
+  padding-left: 50px;
+  position: relative;
+  list-style-type: none;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-2px);
+    left: 0;
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: $main-color;
+
+    @media (min-width: $breakpoint-small) {
+      transform: translateY(-3px);
+    }
+  }
+}
+
+@mixin img-sharp {
+  image-rendering: pixelated;
+   image-rendering: -moz-crisp-edges; /* Firefox */
+   -ms-interpolation-mode: nearest-neighbor; /* IE */
+}
+
+
+@mixin hook-modal-full() {
+
+}
+
+@mixin hook-modal() {
+  padding: 0 !important;
+}
+
+@mixin hook-card-body() {
+  flex-grow: 1;
+  /* display: flex;
+  flex-direction: columm;
+  justify-content: space-between; */
+}
+
+@mixin hook-inverse-component-form() {
+
+  .uk-input,
+  .uk-select,
+  .uk-textarea {
+    background-color: $inverse-form-background;
+    color: $inverse-form-color;
+    background-clip: padding-box;
+    @if(mixin-exists(hook-inverse-form)) {@include hook-inverse-form();}
+
+    &:focus {
+      background-color: $inverse-form-background;
+      color: $global-color;
+      @if(mixin-exists(hook-inverse-form-focus)) {@include hook-inverse-form-focus();}
+    }
+  }
+}
+
+@mixin hook-list-misc() {
+
+  dt {
+    margin-top: 15px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  dd {
+    color: #fff;
+  }
+}
+
+@mixin hook-drop-misc() {
+
+  .uk-drop {
+    left: 0;
+  }
+}
+
+@mixin hook-button-primary(){}
+// @mixin hook-button-primary-hover(){}
+// @mixin hook-button-primary-active(){}
+
+@mixin hook-inverse-button-primary() {
+
+}
+
+@mixin hook-countdown() {
+
+  & > div:not(:first-child) {
+    padding-left: 15px !important;
+  }
+}
+
+@mixin hook-pagination-misc() {
+
+  .uk-pagination > li > a {
+    display: inline-block;
+    vertical-align: baseline;
+    padding: 0 7px;
+  }
+
+  .uk-pagination > * {
+    padding-left: $pagination-margin-horizontal;
+
+    @media (min-width: $breakpoint-small) {
+      padding-left: 20px;
+    }
+  }
+}
+
+@mixin hook-list-misc() {
+
+  .uk-list-bullet > li {
+    padding-left: 30px;
+  }
+}

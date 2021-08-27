@@ -1,0 +1,541 @@
+
+// Make viewport great again (responsive)
+// http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+@at-root {
+
+  @-ms-viewport { // stylelint-disable-line  at-rule-no-vendor-prefix
+    width: device-width;
+  }
+}
+
+// html
+.page {
+
+  $block-name:                &; // #{$block-name}__element
+
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-overflow-style: scrollbar;
+  -ms-text-size-adjust: 100%; // stylelint-disable-line  property-no-vendor-prefix
+  min-width: 320px;
+  min-height: 100%;
+
+  &__inner {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__footer-wrapper {
+    flex-shrink: 0;
+  }
+
+  &__top-bg {
+    min-height: 500px;
+  }
+
+  &__noindex {
+    padding-bottom: 40px;
+    background-color: #fff;
+  }
+
+  .main-page {
+    padding-top: 20px;
+
+    @media (min-width: $breakpoint-large) {
+      padding-top: 40px;
+    }
+
+    &--short {
+      padding: 40px 0 !important;
+
+      @media (min-width: $breakpoint-small) {
+        padding: 120px 0 !important;
+      }
+
+      @media (min-width: $breakpoint-medium) {
+        padding: 160px 0 !important;
+      }
+
+      @media (min-width: $breakpoint-large) {
+        padding: 240px 0 !important;
+      }
+    }
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.list-nostyled {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+/* ol{
+  counter-reset: myCounter;
+
+  li:before {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-right: 0.7em;
+    counter-increment: myCounter;
+    content: counter(myCounter)".";
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    text-align: left;
+    line-height: inherit;
+    color: $global-color;
+  }
+}
+ */
+/* Кастомизируем выделение текста на сайте */
+*:not(img)::selection {
+  //color: $white;
+  //background-color: $main-color; /* Safari, Chrome, Opera */
+}
+
+*:not(img)::-moz-selection {
+  //color: $white;
+  //background-color: $main-color; /* FireFox */
+}
+
+// background: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color, stroke=rgba(255, 255, 255, 0));
+
+.text-link {
+  font-size: 20px;
+  font-weight: 500;
+  color: inherit;
+}
+
+.publishedon {
+  font-size: $global-small-font-size;
+  text-decoration: none;
+  color: #bfc0c2;
+}
+
+a {
+
+  &:hover,
+  &:focus {
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: $global-primary-background !important;
+    }
+  }
+}
+
+a.uk-card {
+  text-decoration: none !important;
+}
+
+.aim-img {
+  min-width: 245px;
+
+  @media (min-width: $breakpoint-small) {
+    flex: 0 1 275px;
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    flex-basis: 400px;
+  }
+}
+
+.subtitle-on-background {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (min-width: $breakpoint-large) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.uk-grid > li.uk-grid-margin {
+  margin-top: 15px;
+}
+
+.contact-form-aside {
+  padding: 40px 20px;
+  border-top: 4px solid $global-primary-background;
+
+  @media (min-width: $breakpoint-medium) {
+    position: sticky;
+    top: 40px;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    padding: 40px;
+  }
+}
+
+.uk-light {
+
+  .error {
+    font-size: 0.85em;
+  }
+}
+
+.top-event {
+
+  .uk-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+
+    @media (min-width: $breakpoint-large) {
+      padding-left: 0;
+    }
+
+    & > div {
+      flex: 1 1;
+    }
+
+    h3, h4 {
+      margin-top: 0;
+    }
+
+    .uk-button {
+      align-self: flex-end;
+    }
+  }
+}
+
+.top-event-calendar {
+
+  td {
+    padding: 15px 0;
+
+    @media (min-width: $breakpoint-small) {
+      padding: 15px 5px;
+    }
+
+    @media (min-width: $breakpoint-medium) {
+      padding: 15px 0;
+    }
+
+    @media (min-width: $breakpoint-large) {
+      padding: 15px 5px;
+    }
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: currentColor;
+
+    &:hover,
+    &:focus,
+    &.active {
+      color: #fff;
+      background-color: $global-primary-background;
+    }
+
+    &.active {
+      pointer-events: none;
+    }
+  }
+}
+
+.news-nav {
+
+  a {
+    text-decoration: none;
+
+    &.active {
+      color: $global-primary-background;
+      pointer-events: none;
+    }
+  }
+}
+
+.text-page-content {
+
+  img {
+    width: 100%;
+  }
+}
+
+.membership-form {
+
+  &__wrapper {
+
+    @media (min-width: $breakpoint-medium) {
+      padding: 30px 0 30px 0;
+    }
+  }
+}
+
+label,
+.uk-form-label {
+  cursor: pointer !important;
+
+  &:hover {
+
+    span {
+      color: $global-primary-background;
+    }
+  }
+}
+
+input[type=checkbox]:focus + span {
+  color: $global-primary-background;
+}
+
+.year-report {
+
+  .uk-subnav *  {
+    font-size: 22px;
+
+    & > a {
+      color: $global-emphasis-color;
+
+      &:hover,
+      &:focus {
+        color: $global-primary-background;
+      }
+    }
+  }
+
+  .uk-active > a {
+    pointer-events: none;
+    color: $global-primary-background;
+  }
+}
+
+.address-block {
+
+  dt,
+  dd {
+    font-size: 20px;
+  }
+
+  dt {
+    font-weight: 700;
+
+    @media (min-width: $breakpoint-large) {
+      flex-basis: 205px;
+    }
+  }
+
+  dd {
+    font-weight: 500;
+    color: $global-primary-background;
+  }
+
+  &__descr-inner {
+
+    @media (min-width: $breakpoint-large) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+  }
+}
+
+.map-block {
+  height: 200px;
+
+  @media (min-width: $breakpoint-small) {
+    height: 250px;
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    height: 350px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.member-cards {
+
+  &__item {
+    //padding: 20px 0;
+    border-top: 4px solid $global-primary-background;
+    border-bottom: 1px solid $global-border;
+
+    .uk-panel {
+      padding: 20px;
+
+      @media (min-width: $breakpoint-large) {
+        padding: 40px;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        max-width: 210px;
+        max-height:135px;
+      }
+
+      &__logo {
+
+        @media (min-width: $breakpoint-medium) {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        @media (min-width: $breakpoint-large) {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      &__descr {
+
+        @media (min-width: $breakpoint-medium) {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        @media (min-width: $breakpoint-large) {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.about {
+
+
+  &__intro {
+    font-weight: 500;
+  }
+
+  &__history {
+
+    .uk-panel {
+      padding: 20px;
+      border-top: 4px solid $global-primary-background;
+
+      @media (min-width: $breakpoint-medium) {
+        padding: 20px;
+      }
+
+      @media (min-width: $breakpoint-large) {
+        padding: 40px;
+      }
+    }
+  }
+
+  &__diagram {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 2px solid $global-muted-background;
+    border-bottom: 2px solid $global-muted-background;
+
+    @media (min-width: $breakpoint-medium) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    .uk-panel {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      @media (min-width: $breakpoint-large) {
+        justify-content: flex-between;
+        align-items: center;
+      }
+
+      & > * {
+        flex-basis: 100%;
+        text-align: center;
+      }
+
+      .pie-chart {
+
+        @media (min-width: $breakpoint-large) {
+          flex-basis: 184px;
+        }
+      }
+
+      h3 {
+
+        br {
+          display: none;
+
+          @media (min-width: $breakpoint-large) {
+            display: block;
+          }
+        }
+
+        @media (min-width: $breakpoint-large) {
+          flex: 0 1 auto;
+          padding-left: 20px;
+          margin-top: 0;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  &__leader {
+    border-top: 4px solid $global-primary-background;
+
+    .uk-tile {
+      padding: 20px;
+
+      @media (min-width: $breakpoint-medium) {
+        padding: 30px;
+      }
+
+      @media (min-width: $breakpoint-large) {
+        padding: 40px;
+      }
+    }
+
+    .padding-remove-l {
+      @media (min-width: $breakpoint-large) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__leader-text {
+
+    .uk-panel {
+      padding: 0 20px;
+
+      @media (min-width: $breakpoint-small) {
+        padding: 20px 0;
+      }
+
+      @media (min-width: $breakpoint-medium) {
+        padding: 30px 0 0 0;
+      }
+
+      @media (min-width: $breakpoint-large) {
+        padding: 40px 0 0 0;
+      }
+    }
+
+  }
+}

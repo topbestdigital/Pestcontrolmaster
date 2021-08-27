@@ -1,0 +1,151 @@
+// Переопределенные стили
+
+/* ubuntu-regular - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'),
+       url('../fonts/ubuntu-v14-cyrillic_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/ubuntu-v14-cyrillic_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* ubuntu-500 - cyrillic_latin */
+@font-face {
+  font-family: 'Ubuntu';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+  src: local('Ubuntu Medium'), local('Ubuntu-Medium'),
+       url('../fonts/ubuntu-v14-cyrillic_latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/ubuntu-v14-cyrillic_latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* ubuntu-700 - cyrillic_latin */
+@font-face {
+  font-family: 'Ubuntu';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'),
+       url('../fonts/ubuntu-v14-cyrillic_latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/ubuntu-v14-cyrillic_latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+$global-font-family: -apple-system, BlinkMacSystemFont, "Ubuntu", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$global-font-size: 16px;
+$global-medium-font-size: 1.25rem;
+$card-title-font-size: $global-medium-font-size;
+
+// Colors
+$global-color: #4e4e4e;
+$global-inverse-color: #fff;
+$global-emphasis-color: #232a30;
+$global-muted-color: #bfc0c2;
+$global-primary-background: #27b45d;
+$global-secondary-background: $global-emphasis-color;
+$global-muted-background: #f4f4f4;
+$global-success-background: $global-primary-background;
+$global-border: #dedede;
+$base-selection-background: $global-primary-background;
+$global-danger-background: #dc143c;
+$article-meta-color: $global-muted-color;
+$text-meta-color: $global-muted-color;
+
+$global-link-color: $global-primary-background;
+$global-link-hover-color: darken($global-link-color, 5%);
+
+$lightbox-background: $global-emphasis-color;
+
+// Margins
+$global-medium-margin: 40px;
+$global-large-margin: 80px;
+$global-xlarge-margin: 160px;
+
+// Text style
+$base-link-text-decoration: none;
+$base-link-hover-text-decoration: underline;
+$base-heading-font-weight: bold;
+
+$global-border-width: 1px;
+$card-default-footer-border: none;
+
+//Forms
+$inverse-form-background: $global-muted-background;
+
+// Buttons
+$button-default-background: rgba(255, 255, 255, 0);
+$button-default-color: $global-emphasis-color;
+$button-default-hover-background: $global-emphasis-color;
+$button-default-hover-color: $global-inverse-color;
+$button-default-active-background: darken($global-emphasis-color, 10%);
+$button-default-active-color: $global-inverse-color;
+
+$inverse-button-default-background: rgba(255, 255, 255, 0);
+$inverse-button-default-color: $global-inverse-color;
+$inverse-button-default-hover-background: rgba(255, 255, 255, 0);
+$inverse-button-default-hover-color: $global-inverse-color;
+$inverse-button-default-active-background: rgba(255, 255, 255, 0);
+$inverse-button-default-active-color: $global-inverse-color;
+
+$inverse-button-primary-background: $global-primary-background;
+$inverse-button-primary-color: $global-inverse-color;
+$inverse-button-primary-hover-color: $global-inverse-color;
+$inverse-button-primary-active-color: $global-inverse-color;
+
+$button-disabled-background: $global-muted-background;
+$button-disabled-color: $global-muted-color;
+
+$button-text-transform: none;
+$button-font-size: $global-font-size;
+
+$drop-width: 100%;
+
+//card
+$card-default-box-shadow: none;
+$card-primary-box-shadow: none;
+$card-secondary-box-shadow: none;
+
+// navbar
+$navbar-nav-item-height: 80px;
+
+$section-padding-vertical: $global-medium-margin;
+$section-padding-vertical-m: $global-medium-margin;
+
+// Разное
+$modal-dialog-width: 350px;
+$tooltip-background: $global-emphasis-color;
+$close-hover-color: $global-danger-background;
+
+// Offcanvas
+$offcanvas-bar-width: 320px;
+$offcanvas-bar-width-m: 350px;
+$offcanvas-overlay-background: rgba(0,0,0,0.15);
+
+//Countdown
+
+$countdown-number-font-size:      2rem; // 32px
+$countdown-number-font-size-s:    3rem; // 64px
+$countdown-number-font-size-m:    2.5rem; // 96px
+
+$countdown-separator-font-size:   1rem; // 16px
+$countdown-separator-font-size-s: 2rem; // 32px
+$countdown-separator-font-size-m: 1.5rem; // 48px
+
+// Table
+$table-small-cell-padding-vertical:    10px;
+$table-small-cell-padding-horizontal:  10px;
+$table-cell-padding-vertical:          15px;
+$table-cell-padding-horizontal:        10px;
+$table-large-cell-padding-vertical:    20px;
+$table-large-cell-padding-horizontal:  10px;
+
+//paginatopn
+$pagination-margin-horizontal: 15px;
+
+// Сетка
+$breakpoint-small: 640px;
+$breakpoint-medium: 992px;
+$breakpoint-large: 1280px;
+$breakpoint-xlarge: 1600px;
